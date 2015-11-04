@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="f4c44d7a-b6c1-485f-9504-859af29b2955"
-    Publisher="CN=Saksham Khanna"
+    Name="e4e14131-ca05-45cb-8a0b-94d6cdb97ee3"
+    Publisher="CN=Arjun"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="f4c44d7a-b6c1-485f-9504-859af29b2955" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="e4e14131-ca05-45cb-8a0b-94d6cdb97ee3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>IECSE</DisplayName>
-    <PublisherDisplayName>Saksham Khanna</PublisherDisplayName>
+    <PublisherDisplayName>Arjun</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
