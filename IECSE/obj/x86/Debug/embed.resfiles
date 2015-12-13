@@ -1,3 +1,10 @@
 App.xbf
+Styles\HeaderStyle.xbf
 Styles\SplitViewStyles.xbf
+Views\AboutPage.xbf
+Views\HomePage.xbf
+Views\LoginPage.xbf
 Views\MainPage.xbf
+Views\SettingsPage.xbf
+Views\SignUpPage.xbf
+Views\StuffPage.xbf

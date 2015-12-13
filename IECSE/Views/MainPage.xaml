@@ -15,7 +15,7 @@
     </Page.Resources>
 
     <Grid>
-        <SplitView x:Name="MainSplit" DisplayMode="CompactOverlay" Background="Blue" PaneBackground="DarkCyan">
+        <SplitView x:Name="MainSplit" DisplayMode="CompactOverlay" Background="Blue" PaneBackground="DarkCyan" >
             <SplitView.Pane>
                 <StackPanel x:Name="PaneStackPanel">
                     <RadioButton x:Name="MenuButton" Style="{StaticResource SplitViewRadioButtonStyle}" Content="Menu" Checked="MenuButton_Checked">
@@ -54,7 +54,17 @@
                         <TextBlock Text="Settings" FontSize="90"></TextBlock>
                     </Grid>
                     <Grid  x:Name="AccountGrid" Visibility="Collapsed">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
                         <TextBlock Text="Account" FontSize="90"></TextBlock>
+                        <StackPanel x:Name="ButtonHolder" Grid.Row="1" Margin="10">
+                            <TextBox x:Name="UsernameBox" VerticalAlignment="Center" PlaceholderText="Username"  TextWrapping="Wrap" FontSize="33" Margin="10"/>
+                            <PasswordBox x:Name="PasswordBox" VerticalAlignment="Center" FontSize="33" PlaceholderText="Password"  Margin="10"/>
+                            <Button x:Name="LoginButton" HorizontalAlignment="Center" Content="Login" Margin="20" HorizontalContentAlignment="Center"  FontSize="33" Click="LoginButton_Click"></Button>
+                        </StackPanel>
                     </Grid>
                     <Grid  x:Name="AboutGrid" Visibility="Collapsed">
                         <TextBlock Text="About" FontSize="90"></TextBlock>
@@ -62,6 +72,7 @@
                 </Grid>
             </SplitView.Content>
         </SplitView>
+        
 
     </Grid>
 </Page>

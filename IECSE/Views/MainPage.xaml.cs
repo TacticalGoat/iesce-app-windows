@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using IECSE.Sources;
+using Windows.UI.Popups;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace IECSE.Views
@@ -60,6 +63,15 @@ namespace IECSE.Views
             SettingsGrid.Visibility = Visibility.Collapsed;
             AboutGrid.Visibility = Visibility.Collapsed;
             activeGrid.Visibility = Visibility.Visible;
+        }
+
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameBox.Text;
+            string password = PasswordBox.Password;
+            string response = await WebHelper.loginRequest(username, password);
+            MessageDialog msg = new MessageDialog(response);
+            await msg.ShowAsync();
         }
     }
 }
