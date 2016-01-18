@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="IECSE.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IECSE"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF3598DB">
+        <Image x:ConnectionId='1' x:Name="BigLogo" Height="150" VerticalAlignment="Top" Source="ms-appx:///Assets/biglogotransbg.png" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="96,0,114,0"/>
+            <TextBlock x:ConnectionId='2' x:Name="loginTitleBlock" Margin="40,170,40,0" TextWrapping="Wrap" Text="Sign In" Height="50" VerticalAlignment="Top" FontSize="33.333" Foreground="#FFFBF7F7" HorizontalAlignment="Center" Width="280"/>
+            <TextBox x:ConnectionId='3' x:Name="userNameBox" Margin="40,220,40,0" TextWrapping="Wrap" Text="" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Width="280" HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" PlaceholderText="Username" BorderBrush="{x:Null}"                                      >
+                <TextBox.RenderTransform>
+                    <CompositeTransform Rotation="0.348"/>
+                </TextBox.RenderTransform>
+            </TextBox>
+        <StackPanel>
+            <PasswordBox x:ConnectionId='5' x:Name="passwordBox" Margin="0,280,0,0" VerticalAlignment="Top" PlaceholderText="Passoword" Width="280" HorizontalAlignment="Center" Height="40" BorderBrush="#FF3598DB"/>
+            <HyperlinkButton x:ConnectionId='6' x:Name="forgotPasswordButton" Content="Forgot Password?"   HorizontalAlignment="Center" FontSize="13.333" Foreground="White" HorizontalContentAlignment="Left"  Width="280"                                    Margin="0"/>
+            <HyperlinkButton x:ConnectionId='7' x:Name="signUpButton" Content="New User?" HorizontalAlignment="Center"  FontSize="13.333" Foreground="White" HorizontalContentAlignment="Left" Height="37" Width="280"                            Margin="0"/>
+        </StackPanel>
+        <Button x:ConnectionId='4' x:Name="loginButton" Content="&#xE10B;" HorizontalAlignment="Stretch" Height="39" VerticalAlignment="Bottom" FontFamily="Segoe MDL2 Assets" FontSize="29.333" Foreground="White"                            >
+            <Button.Background>
+                <SolidColorBrush Color="{ThemeResource SystemBaseLowColor}"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>
+
+

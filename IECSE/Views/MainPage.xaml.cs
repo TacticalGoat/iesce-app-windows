@@ -69,8 +69,8 @@ namespace IECSE.Views
         {
             string username = UsernameBox.Text;
             string password = PasswordBox.Password;
-            string response = await WebHelper.loginRequest(username, password);
-            MessageDialog msg = new MessageDialog(response);
+            var response = await WebHelper.loginRequest(username, password);
+            MessageDialog msg = new MessageDialog(response.status);
             await msg.ShowAsync();
         }
     }

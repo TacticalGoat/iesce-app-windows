@@ -44,7 +44,7 @@ namespace IECSE.Views
             string password2 = PasswordBox2.Password;
             string username = UsernameBox.Text;
             string mobileno = MobileBox.Text;
-            string name = fullnameBox.Text;
+            string name = textBox.Text;
             string regno = RegistrationNoBox.Text;
             if(!evalEmail(email))
             {
@@ -71,8 +71,8 @@ namespace IECSE.Views
                 return;
             }
 
-            string response = await WebHelper.signUpRequest(email, name, mobileno, regno, username, password1);
-            switch(response)
+            var response = await WebHelper.signUpRequest(email, name, mobileno, regno, username, password1);
+            switch(response.status)
             {
                 case "111":
                     MessageDialog msg = new MessageDialog("Registration Successful! Log in to the App to proceed.");
@@ -80,7 +80,7 @@ namespace IECSE.Views
                     this.Frame.Navigate(typeof(LoginPage));
                     break;
                 default:
-                    MessageDialog msg2 = new MessageDialog("Registration Failed Status Code:" + response);
+                    MessageDialog msg2 = new MessageDialog("Registration Failed Status Code:" + response.status);
                     await msg2.ShowAsync();
                     break;
             }

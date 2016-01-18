@@ -18,9 +18,18 @@
             <Pivot.Title>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/biglogotransbg.png" Height="40" Width="Auto" Stretch="UniformToFill" Margin="0,0,10,0"></Image>
+                    
                 </StackPanel>
             </Pivot.Title>
-            <PivotItem Header="Events"/>
+            <PivotItem Header="Events">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel x:Name="EventsMainStack">
+                        <ProgressRing x:Name="FetchingProgressRing" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"></ProgressRing>
+                         <TextBlock x:Name="UnableToFetchEvents" Visibility="Collapsed" Text="Unable To Fetch Events Check Data Connection" HorizontalAlignment="Center"></TextBlock>
+                         <Button x:Name="GetEventsButton" HorizontalAlignment="Center" Visibility="Collapsed" Content="Get Events" Click="GetEventsButton_Click"></Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
             <PivotItem Header="About" Foreground="White">
                 <ScrollViewer HorizontalContentAlignment="Center" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Hidden" Margin="0,36,0,80.667">
                     <StackPanel>

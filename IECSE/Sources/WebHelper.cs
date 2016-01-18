@@ -6,12 +6,16 @@ using System.Net.Http;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using Newtonsoft.Json;
+using IECSE;
+using System.Diagnostics;
 
 namespace IECSE.Sources
 {
     static class WebHelper
     {
-        public static async Task<string> loginRequest(string username,string password)
+        public enum Months { Jan=1,Feb,Mar,April,May,June,July, Aug, Sept, Oct, Nov, Dec };
+        public static async Task<ResopnseCode> loginRequest(string username,string password)
         {
             try {
                 HttpClient client = new HttpClient();
@@ -25,20 +29,24 @@ namespace IECSE.Sources
                 var response = await client.PostAsync(uri, content);
 
                 var responseString = response.Content.ReadAsStringAsync().Result;
-                return responseString;
+
+                var code = JsonConvert.DeserializeObject<ResopnseCode>(responseString);
+
+                return code;
+                
             }catch(Exception e)
             {
                 MessageDialog m = new MessageDialog(e.StackTrace);
                 await m.ShowAsync();
-                return "NULL";
+                return new ResopnseCode("000");
             }
         }
-        public static async Task<string> signUpRequest(string email,string fullName,string mobile,string regno,string username,string password)
+        public static async Task<ResopnseCode> signUpRequest(string email,string fullName,string mobile,string regno,string username,string password)
         {
             try
             {
                 HttpClient client = new HttpClient();
-                string uri = "http://iecsemanipal.com/app/register.php";
+                string uri = "https://iecsemanipal.com/app/register.php";
                 var content = new FormUrlEncodedContent(new[]
                 {
                     new KeyValuePair<string,string>("username",username),
@@ -50,13 +58,16 @@ namespace IECSE.Sources
                 });
                 var response = await client.PostAsync(uri, content);
                 var resonseString = response.Content.ReadAsStringAsync().Result;
-                return resonseString.Substring(11,3); 
+                var code = JsonConvert.DeserializeObject<ResopnseCode>(resonseString);
+                return code;
             }catch(Exception e)
             { 
                 MessageDialog m = new MessageDialog(e.StackTrace);
                 await m.ShowAsync();
-                return "000";
+                return new ResopnseCode("000");
             }
         }
+
+        
     }
 }

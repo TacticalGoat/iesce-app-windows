@@ -191,8 +191,8 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PivotItem">
       <RootProperty Name="Header" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Foreground" />
     </RootType>
     <RootType FullName="IECSE.Views.AboutPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
@@ -207,6 +207,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Style" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="UseLayoutRounding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
@@ -236,6 +237,7 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="Visibility" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
@@ -313,6 +315,11 @@
     <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
       <RootMethod Name="GetAccessibilityView" />
       <RootMethod Name="SetAccessibilityView" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="IECSE.Views.HomePage" />
     <RootType FullName="IECSE.Views.SettingsPage" />
