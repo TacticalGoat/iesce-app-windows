@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="IECSE.Views.StuffPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IECSE.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/HeaderStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid x:ConnectionId='1' x:Name="RootGrid" Background="#FF3598DB">
+        <Pivot Style="{StaticResource PivotStyle}" Foreground="White">
+            <Pivot.Title>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Assets/biglogotransbg.png" Height="40" Width="Auto" Stretch="UniformToFill" Margin="0,0,10,0"></Image>
+                </StackPanel>
+            </Pivot.Title>
+            <PivotItem Header="Hashtag"></PivotItem>
+            <PivotItem Header="Showcase"></PivotItem>
+            <PivotItem Header="Garage"></PivotItem>
+            <PivotItem Header="X"></PivotItem>
+            <PivotItem Header="Code Meets"></PivotItem>
+            <PivotItem Header="Design Meets"></PivotItem>
+        </Pivot>
+        <CommandBar HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="{ThemeResource SystemControlBackgroundBaseLowBrush}" Foreground="White" ClosedDisplayMode="Compact">
+            <AppBarButton x:ConnectionId='2' x:Name="HomeButton" Icon="Home" Label="Home" Foreground="White"                         />
+            <AppBarButton x:ConnectionId='3' x:Name="StuffButton" Icon="OutlineStar" Foreground="White" Label="Stuff"                          />
+            <AppBarButton x:ConnectionId='4' x:Name="SettingsButton" Icon="Setting" Foreground="White" Label="Settings"                             />
+            <AppBarButton x:ConnectionId='5' x:Name="AboutButton" Icon="Help" Foreground="White" Label="About"                          />
+        </CommandBar>
+    </Grid>
+</Page>
+

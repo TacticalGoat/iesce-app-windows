@@ -22,7 +22,13 @@
                 </StackPanel>
             </Pivot.Title>
             <PivotItem Header="Notifications"></PivotItem>
-            <PivotItem Header="Profile"></PivotItem>
+            <PivotItem Header="Profile">
+                <StackPanel>
+                    <TextBlock Text="Profile Management Coming Soon"></TextBlock>
+                    <Button x:Name="LogoutButton" Content="Logout" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Click="LogoutButton_Click"></Button>
+                </StackPanel>
+               
+            </PivotItem>
             <PivotItem Header="Colors">
             </PivotItem>
         </Pivot>
